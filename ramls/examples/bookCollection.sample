@@ -1,0 +1,13 @@
+{
+  "books": [
+    {
+      "name": "Romeo and Juliet",
+      "author": "William Shakespeare"
+    },
+    {
+      "name": "Don Quijote",
+      "author": "Miguel de Cervantes Saavedra"
+    }
+  ],
+  "totalRecords": 2
+}

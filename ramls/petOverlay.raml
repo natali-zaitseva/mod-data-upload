@@ -1,0 +1,28 @@
+##%RAML 1.0 Overlay
+#
+#extends: pets.raml
+#title: Pets
+#protocols: [ HTTP, HTTPS ]
+#
+#types:
+#  pet: !include pet.json
+#  petsCollection: !include petsCollection.json
+#  errors: !include raml-util/schemas/errors.schema
+#
+#/pets:
+#  displayName: Pets
+#  description: Pets that live here
+#  get:
+#    description: Details of pets.
+#    responses:
+#      200:
+#        description: OK
+#        body:
+#          application/json:
+#            description: Details of pets.
+#            type: petsCollection
+#      500:
+#        description: "Internal server error2"
+#        body:
+#          text/plain:
+#            example: "Internal server error, contact administrator"
