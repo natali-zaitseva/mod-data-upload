@@ -1,36 +1,36 @@
 {
   "id": "${artifactId}-${version}",
-  "name": "Pet",
+  "name": "Books",
   "requires": [],
   "provides": [
     {
-      "id": "pets",
+      "id": "books",
       "version": "1.0",
       "handlers": [
         {
           "methods": ["GET"],
-          "pathPattern": "/pets",
-          "permissionsRequired": ["pets.collection.get"]
+          "pathPattern": "/nataliaBook",
+          "permissionsRequired": ["book.collection.get"]
         },
         {
           "methods": ["POST"],
-          "pathPattern": "/pets",
-          "permissionsRequired": ["pets.item.post"]
+          "pathPattern": "/nataliaBook",
+          "permissionsRequired": ["book.item.post"]
         },
         {
           "methods": ["GET"],
-          "pathPattern": "/pets/{id}",
-          "permissionsRequired": ["pets.item.get"]
+          "pathPattern": "/nataliaBook/{id}",
+          "permissionsRequired": ["book.item.get"]
         },
         {
           "methods": ["PUT"],
-          "pathPattern": "/pets/{id}",
-          "permissionsRequired": ["pets.item.put"]
+          "pathPattern": "/nataliaBook/{id}",
+          "permissionsRequired": ["book.item.put"]
         },
         {
           "methods": ["DELETE"],
-          "pathPattern": "/pets/{id}",
-          "permissionsRequired": ["pets.item.delete"]
+          "pathPattern": "/nataliaBook/{id}",
+          "permissionsRequired": [ "book.item.delete"]
         }
       ]
     },
@@ -40,15 +40,11 @@
       "interfaceType": "system",
       "handlers": [
         {
-          "methods": [
-            "POST"
-          ],
+          "methods": ["POST"],
           "pathPattern": "/_/tenant"
         },
         {
-          "methods": [
-            "DELETE"
-          ],
+          "methods": ["DELETE"],
           "pathPattern": "/_/tenant"
         }
       ]
@@ -56,40 +52,40 @@
   ],
   "permissionSets": [
     {
-      "permissionName": "pets.collection.get",
-      "displayName": "Pets - get pets collection",
-      "description": "Get pets collection"
+      "permissionName": "book.collection.get",
+      "displayName": "Book - get books collection",
+      "description": "Get books collection"
     },
     {
-      "permissionName": "pets.item.get",
-      "displayName": "Pets - get individual pet from storage",
-      "description": "Get individual pet"
+      "permissionName": "book.item.get",
+      "displayName": "Book - get individual book from storage",
+      "description": "Get individual book"
     },
     {
-      "permissionName": "pets.item.post",
-      "displayName": "Pets - create pet",
-      "description": "Create pet"
+      "permissionName": "book.item.post",
+      "displayName": "Book - create book",
+      "description": "Create book"
     },
     {
-      "permissionName": "pets.item.put",
-      "displayName": "Pets - modify pet",
-      "description": "Modify pet"
+      "permissionName": "book.item.put",
+      "displayName": "Book - modify book",
+      "description": "Modify book"
     },
     {
-      "permissionName": "pets.item.delete",
-      "displayName": "Pets - delete pet",
-      "description": "Delete pet"
+      "permissionName": "book.item.delete",
+      "displayName": "Book - delete book",
+      "description": "Delete book"
     },
     {
-      "permissionName": "pets.all",
-      "displayName": "Pets module - all permissions",
-      "description": "Entire set of permissions needed to use the pets module",
+      "permissionName": "book.all",
+      "displayName": "Book module - all permissions",
+      "description": "Entire set of permissions needed to use the books module",
       "subPermissions": [
-        "pets.collection.get",
-        "pets.item.get",
-        "pets.item.post",
-        "pets.item.put",
-        "pets.item.delete"
+        "book.collection.get",
+        "book.item.get",
+        "book.item.post",
+        "book.item.put",
+        "book.item.delete"
       ],
       "visible": false
     }

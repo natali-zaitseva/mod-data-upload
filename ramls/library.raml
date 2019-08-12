@@ -10,8 +10,8 @@ documentation:
     content: Please respect copyrights on our books.
 
 types:
-  book: !include bookParent.json
-  bookCollection: !include bookCollection.json
+  nataliaBook: !include nataliaBook.json
+  nataliaBookCollection: !include bookCollection.json
   errors: !include raml-util/schemas/errors.schema
 
 traits:
@@ -21,11 +21,59 @@ resourceTypes:
   collection: !include raml-util/rtypes/collection.raml
   collection-item: !include raml-util/rtypes/item-collection.raml
 
-/books:
+/nataliaBook:
+  displayName: Books
   description: The collection of library books
-  type:
-    collection:
-      schemaCollection: bookCollection
-      schemaItem: book
-      exampleCollection: !include examples/bookCollection.sample
-      exampleItem: !include examples/book.sample
+  get:
+    description: Get a collection of the books.
+    responses:
+      200:
+        description: OK
+        body:
+          application/json:
+            description: Get a collection of the books
+            type: nataliaBookCollection
+            example:
+              strict: false
+              value: !include examples/bookCollection.sample
+  post:
+    description: Create a new Custom Book.
+    headers:
+      Content-Type:
+        example: application/json
+    body:
+      application/json:
+        description: Create a new Custom Book.
+        type: nataliaBook
+        example:
+          strict: false
+          value: !include examples/post_book.sample
+    responses:
+      200:
+        description: OK
+        body:
+          application/json:
+            description: The server has successfully fulfilled the POST request.
+            type: nataliaBook
+            example:
+              strict: false
+              value: !include examples/book1.sample
+      500:
+        description: "Internal server error"
+        body:
+          text/plain:
+            example: "Internal server error"
+  /{id}:
+    displayName: Book
+    description: Get a specific book
+    type:
+      collection-item:
+        schema: nataliaBook
+        exampleItem: !include examples/book.sample
+    get:
+      responses:
+        400:
+          description: "Bad request"
+          body:
+            text/plain:
+              example: "Bad request"

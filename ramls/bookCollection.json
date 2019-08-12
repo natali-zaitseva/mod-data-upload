@@ -1,5 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
+  "javaType": "org.folio.rest.jaxrs.model.NataliaBookCollection",
   "type": "object",
   "description": "Collection of books",
   "properties": {
@@ -7,7 +8,7 @@
       "type": "array",
       "items": {
         "type": "object",
-        "$ref": "raml-util/schemas/codex/instance.json"
+        "$ref": "nataliaBook.json"
       }
     },
     "totalRecords": {
